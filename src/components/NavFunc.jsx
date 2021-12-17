@@ -5,7 +5,7 @@ import Logo from '../logo.svg'
 import './Nav.css';
 
 
-function Nav() {
+function NavFunc() {
   return (
     <nav className="navbar navbar-dark bg-dark">
       <span className="navbar-brand">
@@ -20,4 +20,4 @@ function Nav() {
   );
 };
 
-export default Nav;
+export default NavFunc;
