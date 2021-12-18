@@ -3,10 +3,6 @@ import Card from "./CardClass";
 import cards from './Cards.module.css';
 
 class CardsClass extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     if(this.props.cities && this.props.cities.length>0) {
       return (
