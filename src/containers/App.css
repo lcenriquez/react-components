@@ -4,11 +4,15 @@
 }
 
 .class {
-  flex-grow: 1;
+  flex: 50%;
+  text-align: center;
   background-color: lightsalmon;
+  padding-bottom: 50px;
 }
 
 .func {
-  flex-grow: 1;
+  flex: 50%;
+  text-align: center;
   background-color: lightsteelblue;
+  padding-bottom: 50px;
 }

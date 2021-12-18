@@ -1,0 +1,12 @@
+.displayFlex {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.buttonSearch {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+}
