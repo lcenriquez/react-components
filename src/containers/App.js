@@ -3,6 +3,7 @@ import Nav from '../components/NavClass';
 import WeatherClass from './WeatherClass';
 import WeatherFunc from './WeatherFunc';
 import FormFunc from './FormFunc';
+import FormClass from './FormClass';
 import './App.css';
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
                 <WeatherClass />
               </div>
               <hr />
+              <div className="app">
+                <FormClass />
+              </div>
             </div>
             <div className="func">
               <h1>Componentes funcionales</h1>

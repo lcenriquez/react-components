@@ -1,0 +1,34 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.formContainer p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.formInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.formInputs input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 25px;
+}
+
+p.danger {
+  color: darkred;
+  font-size: 14px;
+}
+
+input.danger {
+  border: 2px solid red;
+}
