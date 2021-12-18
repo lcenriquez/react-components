@@ -9,6 +9,11 @@
   color: white;
 }
 
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
 .bg-dark {
   background-color: darkslategrey;
 }
@@ -23,10 +28,6 @@
   display: inline-flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.navbar-links a {
-  color: white;
 }
 
 #logo {
