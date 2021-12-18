@@ -1,3 +1,7 @@
+hr {
+  border: 1px dashed gray;
+}
+
 .container {
   display: flex;
   justify-content: space-evenly;
@@ -15,4 +19,8 @@
   text-align: center;
   background-color: lightsteelblue;
   padding-bottom: 50px;
+}
+
+.app {
+  padding: 20px 0px;
 }
