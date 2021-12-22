@@ -2,8 +2,10 @@ import { Routes, Route } from 'react-router-dom';
 import Nav from '../components/NavClass';
 import WeatherClass from './WeatherClass';
 import WeatherFunc from './WeatherFunc';
-import FormFunc from './FormFunc';
 import FormClass from './FormClass';
+import FormFunc from './FormFunc';
+import TimerClass from './TimerClass';
+import TimerFunc from './TimerFunc';
 import './App.css';
 
 function App() {
@@ -24,6 +26,10 @@ function App() {
               <div className="app">
                 <FormClass />
               </div>
+              <hr />
+              <div className="app">
+                <TimerClass />
+              </div>
             </div>
             <div className="func">
               <h1>Componentes funcionales</h1>
@@ -33,6 +39,10 @@ function App() {
               <hr />
               <div className="app">
                 <FormFunc />
+              </div>
+              <hr />
+              <div className="app">
+                <TimerFunc />
               </div>
             </div>
           </div>

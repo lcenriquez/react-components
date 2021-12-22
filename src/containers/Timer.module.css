@@ -1,0 +1,64 @@
+.tabBar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  color: white;
+  cursor: pointer;
+}
+
+.tabBar li {
+  border: 1px solid white;
+  padding: 10px;
+  width: 100px;
+}
+
+.tabBar li:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-right: none;
+}
+
+.tabBar li:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.selected {
+  background-color: salmon;
+}
+
+.controlsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.start {
+  background-color: green;
+  color: white;
+}
+
+.secondsInput {
+  border: none;
+  outline: none;
+  width: 100px;
+  padding: 10px 15px;
+  font-size: 18px;
+  border-radius: 5px;
+}
