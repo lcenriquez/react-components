@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setUser } from '../actions';
 import './Form.css';
 
 export function validate(input) {
@@ -22,16 +24,27 @@ class FormClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      input: {
-        username: '',
-        password: ''
-      },
+      input: this.props.reduxUser,
       error: {
         username: '',
         password: ''
       }
     };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // Revisar (estamos comparando objetos)
+    if(prevProps.reduxUser !== this.props.reduxUser) {
+      // console.log("Hubo un update");
+      this.setState({
+        input: this.props.reduxUser
+      });
+      let errors = validate(this.props.reduxUser);
+      this.setState({
+        error: errors
+      });
+    }
   }
 
   handleChange(event) {
@@ -49,6 +62,11 @@ class FormClass extends React.Component {
     });
   }
 
+  save(event) {
+    event.preventDefault();
+    this.props.setUser(this.state.input.username, this.state.input.password);
+  }
+
   render() {
     return (
       <div>
@@ -61,10 +79,19 @@ class FormClass extends React.Component {
             { this.state.error.username ? <p className="danger">{this.state.error.username}</p> : null }
             { this.state.error.password ? <p className="danger">{this.state.error.password}</p> : null }
           </div>
+          <div>
+            <button onClick={e => this.save(e)}>Redux</button>
+          </div>
         </form>
       </div>
     )
   }
 }
 
-export default FormClass;
+const mapStateToProps = (state) => {
+  return {
+    reduxUser: state.user
+  }
+}
+
+export default connect(mapStateToProps, { setUser })(FormClass);

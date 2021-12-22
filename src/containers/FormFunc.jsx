@@ -1,5 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUser } from '../actions';
 import './Form.css';
 
 export function validate(input) {
@@ -20,7 +22,9 @@ export function validate(input) {
 }
 
 export default function FormFunc() {
-  let [ input, setInput ] = useState({username: '', password: ''});
+  let dispatch = useDispatch();
+  let reduxUser = useSelector(state => state.user);
+  let [ input, setInput ] = useState(reduxUser);
   let [ error, setError ] = useState({username: '', password: ''});
 
   function handleChange(event) {
@@ -34,6 +38,16 @@ export default function FormFunc() {
     }));
   }
 
+  function save(event) {
+    event.preventDefault();
+    dispatch(setUser(input.username, input.password));
+  }
+
+  useEffect(() => {
+    setInput(reduxUser);
+    setError(validate(reduxUser));
+  }, [reduxUser]);
+
   return (
     <div>
       <form className="formContainer">
@@ -44,6 +58,9 @@ export default function FormFunc() {
         <div>
           { error.username ? <p className="danger">{error.username}</p> : null }
           { error.password ? <p className="danger">{error.password}</p> : null }
+        </div>
+        <div>
+          <button onClick={e => save(e)}>Redux</button>
         </div>
       </form>
     </div>
